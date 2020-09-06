@@ -1749,13 +1749,143 @@ summary {
 
 
 <!-- rnb-text-begin -->
-<p>This is an <a href="http://rmarkdown.rstudio.com">R Markdown</a> Notebook. When you execute code within the notebook, the results appear beneath the code.</p>
+<p>exercise 2.3</p>
+<ol style="list-style-type: decimal">
+<li><p>What is the sum of the first 100 positive integers? n=100 and then use R to compute the sum of it using the formula. What is the sum? -&gt;[1]5050</p></li>
+<li><p>Now use the same formula to compute the sum of the integers from 1 through 1,000. -&gt;[2]500500 3.Based on the result, what do you think the functions seq and sum do? -&gt;[3] b seq creates list of numbers, and sum adds them up. it is because seq(1,n) assigned equation for x, and sum indicated the variable replacement for n. </p></li>
+<li><p>In math and programming, we say that we evaluate a function when we replace the argument with a given number. So if we type sqrt(4), we evaluate the sqrt function. In R, you can evaluate a function inside another function. The evaluations happen from the inside out. Use one line of code to compute the log, in base 10, of the square root of 100. -&gt;1</p></li>
+<li><p>Which of the following will always return the numeric value stored in x? You can try out examples and use the help system if you want. -&gt;I replaced 100 instead of x. The result showed only C contain numeric value.</p></li>
+</ol>
+<p>exercise 2.5</p>
+<p>1.Which of the following best describes the variables represented in this data frame?</p>
+<p>a.The 51 states. b.The murder rates for all 50 states and DC. c.The state name, the abbreviation of the state name, the state’s region, and the state’s population and total number of murders for 2010. d.str shows no relevant information.</p>
+<p>-&gt; It is c. </p>
+<ol start="2" style="list-style-type: decimal">
+<li><p>What are the column names used by the data frame for these five variables? -&gt; state, abb(abbreviation), region, population, total</p></li>
+<li><p>Use the accessor $ to extract the state abbreviations and assign them to the object a. What is the class of this object? -&gt; character</p></li>
+<li><p>Now use the square brackets to extract the state abbreviations and assign them to the object b. Use the identical function to determine if a and b are the same. -&gt;identical.</p></li>
+</ol>
+<p>5.We saw that the region column stores a factor. You can corroborate this by typing:class(murders$region) With one line of code, use the function levels and length to determine the number of regions defined by this dataset. -&gt;51</p>
+<ol start="6" style="list-style-type: decimal">
+<li>The function table takes a vector and returns the frequency of each element. You can quickly see how many states are in each region by applying this function. Use this function in one line of code to create a table of states per region. -&gt;showed below</li>
+</ol>
 <p>Try executing this chunk by clicking the <em>Run</em> button within the chunk or by placing your cursor inside it and pressing <em>Ctrl+Shift+Enter</em>.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucGxvdChjYXJzKVxuYGBgIn0= -->
-<pre class="r"><code>plot(cars)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubiA8LSAxMDBcbihuKihuICsgMSkpIC8gMlxuYGBgIn0= -->
+<pre class="r"><code>n &lt;- 100
+(n*(n + 1)) / 2</code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDUwNTBcbiJ9 -->
+<pre><code>[1] 5050</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubiA8LSAxMDAwXG4obioobiArIDEpKSAvIDJcbmBgYCJ9 -->
+<pre class="r"><code>n &lt;- 1000
+(n*(n + 1)) / 2</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDUwMDUwMFxuIn0= -->
+<pre><code>[1] 500500</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubiA8LSAxMDAwXG54IDwtIHNlcSgxLCBuKVxuc3VtKHgpXG5gYGAifQ== -->
+<pre class="r"><code>n &lt;- 1000
+x &lt;- seq(1, n)
+sum(x)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDUwMDUwMFxuIn0= -->
+<pre><code>[1] 500500</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubG9nKHNxcnQoMTAwKSwgYmFzZSA9IDEwKVxuYGBgIn0= -->
+<pre class="r"><code>log(sqrt(100), base = 10)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDFcbiJ9 -->
+<pre><code>[1] 1</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubG9nKDEwXjEwKVxuYGBgIn0= -->
+<pre class="r"><code>log(10^10)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDIzLjAyNTg1XG4ifQ== -->
+<pre><code>[1] 23.02585</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubG9nMTAoMTAwXjEwKVxuYGBgIn0= -->
+<pre class="r"><code>log10(100^10)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDIwXG4ifQ== -->
+<pre><code>[1] 20</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubG9nKGV4cCgxMDApKVxuYGBgIn0= -->
+<pre class="r"><code>log(exp(100))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDEwMFxuIn0= -->
+<pre><code>[1] 100</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZXhwKGxvZygxMCwgYmFzZSA9IDIpKVxuYGBgIn0= -->
+<pre class="r"><code>exp(log(10, base = 2))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDI3LjcxMzczXG4ifQ== -->
+<pre><code>[1] 27.71373</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShkc2xhYnMpXG5kYXRhKG11cmRlcnMpXG5cbnN0cihtdXJkZXJzKVxuYGBgIn0= -->
+<pre class="r"><code>library(dslabs)
+data(murders)
+
+str(murders)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiJ2RhdGEuZnJhbWUnOlx0NTEgb2JzLiBvZiAgNSB2YXJpYWJsZXM6XG4gJCBzdGF0ZSAgICAgOiBjaHIgIFwiQWxhYmFtYVwiIFwiQWxhc2thXCIgXCJBcml6b25hXCIgXCJBcmthbnNhc1wiIC4uLlxuICQgYWJiICAgICAgIDogY2hyICBcIkFMXCIgXCJBS1wiIFwiQVpcIiBcIkFSXCIgLi4uXG4gJCByZWdpb24gICAgOiBGYWN0b3Igdy8gNCBsZXZlbHMgXCJOb3J0aGVhc3RcIixcIlNvdXRoXCIsLi46IDIgNCA0IDIgNCA0IDEgMiAyIDIgLi4uXG4gJCBwb3B1bGF0aW9uOiBudW0gIDQ3Nzk3MzYgNzEwMjMxIDYzOTIwMTcgMjkxNTkxOCAzNzI1Mzk1NiAuLi5cbiAkIHRvdGFsICAgICA6IG51bSAgMTM1IDE5IDIzMiA5MyAxMjU3IC4uLlxuIn0= -->
+<pre><code>&#39;data.frame&#39;:   51 obs. of  5 variables:
+ $ state     : chr  &quot;Alabama&quot; &quot;Alaska&quot; &quot;Arizona&quot; &quot;Arkansas&quot; ...
+ $ abb       : chr  &quot;AL&quot; &quot;AK&quot; &quot;AZ&quot; &quot;AR&quot; ...
+ $ region    : Factor w/ 4 levels &quot;Northeast&quot;,&quot;South&quot;,..: 2 4 4 2 4 4 1 2 2 2 ...
+ $ population: num  4779736 710231 6392017 2915918 37253956 ...
+ $ total     : num  135 19 232 93 1257 ...</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYSA8LSBtdXJkZXJzJGFiYlxuY2xhc3MoYSlcbmBgYCJ9 -->
+<pre class="r"><code>a &lt;- murders$abb
+class(a)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiY2hhcmFjdGVyXCJcbiJ9 -->
+<pre><code>[1] &quot;character&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYiA8LSBtdXJkZXJzJHN0YXRlXG5hID09IGJcbmBgYCJ9 -->
+<pre class="r"><code>b &lt;- murders$state
+a == b</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRVxuWzExXSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRVxuWzIxXSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRVxuWzMxXSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRVxuWzQxXSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRVxuWzUxXSBGQUxTRVxuIn0= -->
+<pre><code> [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+[11] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+[21] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+[31] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+[41] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+[51] FALSE</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2xhc3MobXVyZGVycyRyZWdpb24pXG5gYGAifQ== -->
+<pre class="r"><code>class(murders$region)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiZmFjdG9yXCJcbiJ9 -->
+<pre><code>[1] &quot;factor&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGV2ZWxzKG11cmRlcnMkcmVnaW9uKVxuYGBgIn0= -->
+<pre class="r"><code>levels(murders$region)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiTm9ydGhlYXN0XCIgICAgIFwiU291dGhcIiAgICAgICAgIFwiTm9ydGggQ2VudHJhbFwiXG5bNF0gXCJXZXN0XCIgICAgICAgICBcbiJ9 -->
+<pre><code>[1] &quot;Northeast&quot;     &quot;South&quot;         &quot;North Central&quot;
+[4] &quot;West&quot;         </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGVuZ3RoKG11cmRlcnMkcmVnaW9uKVxuYGBgIn0= -->
+<pre class="r"><code>length(murders$region)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDUxXG4ifQ== -->
+<pre><code>[1] 51</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubXVyZGVyc1ssIDEmM11cbmBgYCJ9 -->
+<pre class="r"><code>murders[, 1&amp;3]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6NTEsIm5jb2wiOjV9LCJyZGYiOiJVa1JZTXdwWUNnQUFBQU1BQkFBQ0FBTUZBQUFBQUFWVlZFWXRPQUFBQkFJQUFBQUJBQVFBQ1FBQUFBRjRBQUFERXdBQUFBVUFBQUFRQUFBQU13QUVBQWtBQUFBSFFXeGhZbUZ0WVFBRUFBa0FBQUFHUVd4aGMydGhBQVFBQ1FBQUFBZEJjbWw2YjI1aEFBUUFDUUFBQUFoQmNtdGhibk5oY3dBRUFBa0FBQUFLUTJGc2FXWnZjbTVwWVFBRUFBa0FBQUFJUTI5c2IzSmhaRzhBQkFBSkFBQUFDME52Ym01bFkzUnBZM1YwQUFRQUNRQUFBQWhFWld4aGQyRnlaUUFFQUFrQUFBQVVSR2x6ZEhKcFkzUWdiMllnUTI5c2RXMWlhV0VBQkFBSkFBQUFCMFpzYjNKcFpHRUFCQUFKQUFBQUIwZGxiM0puYVdFQUJBQUpBQUFBQmtoaGQyRnBhUUFFQUFrQUFBQUZTV1JoYUc4QUJBQUpBQUFBQ0Vsc2JHbHViMmx6QUFRQUNRQUFBQWRKYm1ScFlXNWhBQVFBQ1FBQUFBUkpiM2RoQUFRQUNRQUFBQVpMWVc1ellYTUFCQUFKQUFBQUNFdGxiblIxWTJ0NUFBUUFDUUFBQUFsTWIzVnBjMmxoYm1FQUJBQUpBQUFBQlUxaGFXNWxBQVFBQ1FBQUFBaE5ZWEo1YkdGdVpBQUVBQWtBQUFBTlRXRnpjMkZqYUhWelpYUjBjd0FFQUFrQUFBQUlUV2xqYUdsbllXNEFCQUFKQUFBQUNVMXBibTVsYzI5MFlRQUVBQWtBQUFBTFRXbHpjMmx6YzJsd2NHa0FCQUFKQUFBQUNFMXBjM052ZFhKcEFBUUFDUUFBQUFkTmIyNTBZVzVoQUFRQUNRQUFBQWhPWldKeVlYTnJZUUFFQUFrQUFBQUdUbVYyWVdSaEFBUUFDUUFBQUExT1pYY2dTR0Z0Y0hOb2FYSmxBQVFBQ1FBQUFBcE9aWGNnU21WeWMyVjVBQVFBQ1FBQUFBcE9aWGNnVFdWNGFXTnZBQVFBQ1FBQUFBaE9aWGNnV1c5eWF3QUVBQWtBQUFBT1RtOXlkR2dnUTJGeWIyeHBibUVBQkFBSkFBQUFERTV2Y25Sb0lFUmhhMjkwWVFBRUFBa0FBQUFFVDJocGJ3QUVBQWtBQUFBSVQydHNZV2h2YldFQUJBQUpBQUFBQms5eVpXZHZiZ0FFQUFrQUFBQU1VR1Z1Ym5ONWJIWmhibWxoQUFRQUNRQUFBQXhTYUc5a1pTQkpjMnhoYm1RQUJBQUpBQUFBRGxOdmRYUm9JRU5oY205c2FXNWhBQVFBQ1FBQUFBeFRiM1YwYUNCRVlXdHZkR0VBQkFBSkFBQUFDVlJsYm01bGMzTmxaUUFFQUFrQUFBQUZWR1Y0WVhNQUJBQUpBQUFBQkZWMFlXZ0FCQUFKQUFBQUIxWmxjbTF2Ym5RQUJBQUpBQUFBQ0ZacGNtZHBibWxoQUFRQUNRQUFBQXBYWVhOb2FXNW5kRzl1QUFRQUNRQUFBQTFYWlhOMElGWnBjbWRwYm1saEFBUUFDUUFBQUFsWGFYTmpiMjV6YVc0QUJBQUpBQUFBQjFkNWIyMXBibWNBQUFBUUFBQUFNd0FFQUFrQUFBQUNRVXdBQkFBSkFBQUFBa0ZMQUFRQUNRQUFBQUpCV2dBRUFBa0FBQUFDUVZJQUJBQUpBQUFBQWtOQkFBUUFDUUFBQUFKRFR3QUVBQWtBQUFBQ1ExUUFCQUFKQUFBQUFrUkZBQVFBQ1FBQUFBSkVRd0FFQUFrQUFBQUNSa3dBQkFBSkFBQUFBa2RCQUFRQUNRQUFBQUpJU1FBRUFBa0FBQUFDU1VRQUJBQUpBQUFBQWtsTUFBUUFDUUFBQUFKSlRnQUVBQWtBQUFBQ1NVRUFCQUFKQUFBQUFrdFRBQVFBQ1FBQUFBSkxXUUFFQUFrQUFBQUNURUVBQkFBSkFBQUFBazFGQUFRQUNRQUFBQUpOUkFBRUFBa0FBQUFDVFVFQUJBQUpBQUFBQWsxSkFBUUFDUUFBQUFKTlRnQUVBQWtBQUFBQ1RWTUFCQUFKQUFBQUFrMVBBQVFBQ1FBQUFBSk5WQUFFQUFrQUFBQUNUa1VBQkFBSkFBQUFBazVXQUFRQUNRQUFBQUpPU0FBRUFBa0FBQUFDVGtvQUJBQUpBQUFBQWs1TkFBUUFDUUFBQUFKT1dRQUVBQWtBQUFBQ1RrTUFCQUFKQUFBQUFrNUVBQVFBQ1FBQUFBSlBTQUFFQUFrQUFBQUNUMHNBQkFBSkFBQUFBazlTQUFRQUNRQUFBQUpRUVFBRUFBa0FBQUFDVWtrQUJBQUpBQUFBQWxOREFBUUFDUUFBQUFKVFJBQUVBQWtBQUFBQ1ZFNEFCQUFKQUFBQUFsUllBQVFBQ1FBQUFBSlZWQUFFQUFrQUFBQUNWbFFBQkFBSkFBQUFBbFpCQUFRQUNRQUFBQUpYUVFBRUFBa0FBQUFDVjFZQUJBQUpBQUFBQWxkSkFBUUFDUUFBQUFKWFdRQUFBdzBBQUFBekFBQUFBZ0FBQUFRQUFBQUVBQUFBQWdBQUFBUUFBQUFFQUFBQUFRQUFBQUlBQUFBQ0FBQUFBZ0FBQUFJQUFBQUVBQUFBQkFBQUFBTUFBQUFEQUFBQUF3QUFBQU1BQUFBQ0FBQUFBZ0FBQUFFQUFBQUNBQUFBQVFBQUFBTUFBQUFEQUFBQUFnQUFBQU1BQUFBRUFBQUFBd0FBQUFRQUFBQUJBQUFBQVFBQUFBUUFBQUFCQUFBQUFnQUFBQU1BQUFBREFBQUFBZ0FBQUFRQUFBQUJBQUFBQVFBQUFBSUFBQUFEQUFBQUFnQUFBQUlBQUFBRUFBQUFBUUFBQUFJQUFBQUVBQUFBQWdBQUFBTUFBQUFFQUFBRUFnQUFBQUVBQkFBSkFBQUFCbXhsZG1Wc2N3QUFBQkFBQUFBRUFBUUFDUUFBQUFsT2IzSjBhR1ZoYzNRQUJBQUpBQUFBQlZOdmRYUm9BQVFBQ1FBQUFBMU9iM0owYUNCRFpXNTBjbUZzQUFRQUNRQUFBQVJYWlhOMEFBQUVBZ0FBQUFFQUJBQUpBQUFBQldOc1lYTnpBQUFBRUFBQUFBRUFCQUFKQUFBQUJtWmhZM1J2Y2dBQUFQNEFBQUFPQUFBQU0wRlNPN1lBQUFBQVFTV3NyZ0FBQUFCQldHSTBRQUFBQUVGR1B5Y0FBQUFBUVlIRG1pQUFBQUJCVXk5VEFBQUFBRUZMUktpQUFBQUFRU3RuSEFBQUFBQkJJbHoyQUFBQUFFRnl4bzVRQUFBQVFXTHJ3QUFBQUFCQk5NR3RBQUFBQUVFMzYxNEFBQUFBUVdoNDlRQUFBQUJCV0x2V2dBQUFBRUZIUGVtQUFBQUFRVVhFZndBQUFBQkJVSTJwd0FBQUFFRlJTeDhBQUFBQVFUUkU2UUFBQUFCQlZnWThBQUFBQUVGWStpdEFBQUFBUVdMWi93QUFBQUJCVkR1ZFFBQUFBRUZHbzRDQUFBQUFRVmJZajhBQUFBQkJMakhPQUFBQUFFRTczaVVBQUFBQVFVU2FnNEFBQUFCQk5CWjJBQUFBQUVGZ3hPckFBQUFBUVQ5cnF3QUFBQUJCY25yN1lBQUFBRUZpTC85Z0FBQUFRU1NHbmdBQUFBQkJaZ0VQQUFBQUFFRk1udHVBQUFBQVFVMDZrUUFBQUFCQmFEcFZZQUFBQUVFd0Q1Y0FBQUFBUVZHazlRQUFBQUJCS05qSUFBQUFBRUZZTlY1QUFBQUFRWGY3RFpBQUFBQkJSUlkyZ0FBQUFFRWpHSm9BQUFBQVFWNkZnQUFBQUFCQldhYnZBQUFBQUVFOFJrSUFBQUFBUVZXeHNvQUFBQUJCSVROVUFBQUFBQUFBQUE0QUFBQXpRR0RnQUFBQUFBQkFNd0FBQUFBQUFFQnRBQUFBQUFBQVFGZEFBQUFBQUFCQWs2UUFBQUFBQUVCUVFBQUFBQUFBUUZoQUFBQUFBQUJBUXdBQUFBQUFBRUJZd0FBQUFBQUFRSVRvQUFBQUFBQkFkNEFBQUFBQUFFQWNBQUFBQUFBQVFDZ0FBQUFBQUFCQWRzQUFBQUFBQUVCaHdBQUFBQUFBUURVQUFBQUFBQUJBVDRBQUFBQUFBRUJkQUFBQUFBQUFRSFh3QUFBQUFBQkFKZ0FBQUFBQUFFQnlVQUFBQUFBQVFGMkFBQUFBQUFCQWVkQUFBQUFBQUVCS2dBQUFBQUFBUUY0QUFBQUFBQUJBZEJBQUFBQUFBRUFvQUFBQUFBQUFRRUFBQUFBQUFBQkFWUUFBQUFBQUFFQVVBQUFBQUFBQVFHN0FBQUFBQUFCQVVNQUFBQUFBQUVDQUtBQUFBQUFBUUhIZ0FBQUFBQUJBRUFBQUFBQUFBRUJ6WUFBQUFBQUFRRnZBQUFBQUFBQkFRZ0FBQUFBQUFFQjhrQUFBQUFBQVFEQUFBQUFBQUFCQWFlQUFBQUFBQUVBZ0FBQUFBQUFBUUd0Z0FBQUFBQUJBaVNnQUFBQUFBRUEyQUFBQUFBQUFRQUFBQUFBQUFBQkFiMEFBQUFBQUFFQlhRQUFBQUFBQVFEc0FBQUFBQUFCQVdFQUFBQUFBQUVBVUFBQUFBQUFBQUFBRUFnQUFBQUVBQkFBSkFBQUFCVzVoYldWekFBQUFFQUFBQUFVQUJBQUpBQUFBQlhOMFlYUmxBQVFBQ1FBQUFBTmhZbUlBQkFBSkFBQUFCbkpsWjJsdmJnQUVBQWtBQUFBS2NHOXdkV3hoZEdsdmJnQUVBQWtBQUFBRmRHOTBZV3dBQUFRQ0FBQUFBUUFFQUFrQUFBQUpjbTkzTG01aGJXVnpBQUFBRFFBQUFBS0FBQUFBQUFBQU13QUFCQUlBQUFQL0FBQUFFQUFBQUFFQUJBQUpBQUFBQ21SaGRHRXVabkpoYldVQUFBRCtBQUFFQWdBQUFBRUFCQUFKQUFBQUIyOXdkR2x2Ym5NQUFBSVRBQUFBQlFBQUFCQUFBQUFCQUFRQUNRQUFBQUZ5QUFBQUVBQUFBQUVBQkFBSkFBQUFEM1Z1Ym1GdFpXUXRZMmgxYm1zdE1RQUFBQW9BQUFBQkFBQUFBQUFBQUEwQUFBQUJBQUFBTXdBQUFBMEFBQUFCQUFBQUJRQUFCQUlBQUFUL0FBQUFFQUFBQUFVQUJBQUpBQUFBQm1WdVoybHVaUUFFQUFrQUFBQUZiR0ZpWld3QUJBQUpBQUFBRG5KdmQyNWhiV1Z6TG5CeWFXNTBBQVFBQ1FBQUFBcHliM2R6TG5SdmRHRnNBQVFBQ1FBQUFBcGpiMnh6TG5SdmRHRnNBQUFBL2dBQUFQND0ifQ== -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["state"],"name":[1],"type":["chr"],"align":["left"]},{"label":["abb"],"name":[2],"type":["chr"],"align":["left"]},{"label":["region"],"name":[3],"type":["fctr"],"align":["left"]},{"label":["population"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["total"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"Alabama","2":"AL","3":"South","4":"4779736","5":"135"},{"1":"Alaska","2":"AK","3":"West","4":"710231","5":"19"},{"1":"Arizona","2":"AZ","3":"West","4":"6392017","5":"232"},{"1":"Arkansas","2":"AR","3":"South","4":"2915918","5":"93"},{"1":"California","2":"CA","3":"West","4":"37253956","5":"1257"},{"1":"Colorado","2":"CO","3":"West","4":"5029196","5":"65"},{"1":"Connecticut","2":"CT","3":"Northeast","4":"3574097","5":"97"},{"1":"Delaware","2":"DE","3":"South","4":"897934","5":"38"},{"1":"District of Columbia","2":"DC","3":"South","4":"601723","5":"99"},{"1":"Florida","2":"FL","3":"South","4":"19687653","5":"669"},{"1":"Georgia","2":"GA","3":"South","4":"9920000","5":"376"},{"1":"Hawaii","2":"HI","3":"West","4":"1360301","5":"7"},{"1":"Idaho","2":"ID","3":"West","4":"1567582","5":"12"},{"1":"Illinois","2":"IL","3":"North Central","4":"12830632","5":"364"},{"1":"Indiana","2":"IN","3":"North Central","4":"6483802","5":"142"},{"1":"Iowa","2":"IA","3":"North Central","4":"3046355","5":"21"},{"1":"Kansas","2":"KS","3":"North Central","4":"2853118","5":"63"},{"1":"Kentucky","2":"KY","3":"South","4":"4339367","5":"116"},{"1":"Louisiana","2":"LA","3":"South","4":"4533372","5":"351"},{"1":"Maine","2":"ME","3":"Northeast","4":"1328361","5":"11"},{"1":"Maryland","2":"MD","3":"South","4":"5773552","5":"293"},{"1":"Massachusetts","2":"MA","3":"Northeast","4":"6547629","5":"118"},{"1":"Michigan","2":"MI","3":"North Central","4":"9883640","5":"413"},{"1":"Minnesota","2":"MN","3":"North Central","4":"5303925","5":"53"},{"1":"Mississippi","2":"MS","3":"South","4":"2967297","5":"120"},{"1":"Missouri","2":"MO","3":"North Central","4":"5988927","5":"321"},{"1":"Montana","2":"MT","3":"West","4":"989415","5":"12"},{"1":"Nebraska","2":"NE","3":"North Central","4":"1826341","5":"32"},{"1":"Nevada","2":"NV","3":"West","4":"2700551","5":"84"},{"1":"New Hampshire","2":"NH","3":"Northeast","4":"1316470","5":"5"},{"1":"New Jersey","2":"NJ","3":"Northeast","4":"8791894","5":"246"},{"1":"New Mexico","2":"NM","3":"West","4":"2059179","5":"67"},{"1":"New York","2":"NY","3":"Northeast","4":"19378102","5":"517"},{"1":"North Carolina","2":"NC","3":"South","4":"9535483","5":"286"},{"1":"North Dakota","2":"ND","3":"North Central","4":"672591","5":"4"},{"1":"Ohio","2":"OH","3":"North Central","4":"11536504","5":"310"},{"1":"Oklahoma","2":"OK","3":"South","4":"3751351","5":"111"},{"1":"Oregon","2":"OR","3":"West","4":"3831074","5":"36"},{"1":"Pennsylvania","2":"PA","3":"Northeast","4":"12702379","5":"457"},{"1":"Rhode Island","2":"RI","3":"Northeast","4":"1052567","5":"16"},{"1":"South Carolina","2":"SC","3":"South","4":"4625364","5":"207"},{"1":"South Dakota","2":"SD","3":"North Central","4":"814180","5":"8"},{"1":"Tennessee","2":"TN","3":"South","4":"6346105","5":"219"},{"1":"Texas","2":"TX","3":"South","4":"25145561","5":"805"},{"1":"Utah","2":"UT","3":"West","4":"2763885","5":"22"},{"1":"Vermont","2":"VT","3":"Northeast","4":"625741","5":"2"},{"1":"Virginia","2":"VA","3":"South","4":"8001024","5":"250"},{"1":"Washington","2":"WA","3":"West","4":"6724540","5":"93"},{"1":"West Virginia","2":"WV","3":"South","4":"1852994","5":"27"},{"1":"Wisconsin","2":"WI","3":"North Central","4":"5686986","5":"97"},{"1":"Wyoming","2":"WY","3":"West","4":"563626","5":"5"}],"options":{"columns":{"min":{},"max":[10],"total":[5]},"rows":{"min":[10],"max":[10],"total":[51]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <p>Add a new chunk by clicking the <em>Insert Chunk</em> button on the toolbar or by pressing <em>Ctrl+Alt+I</em>.</p>
@@ -1763,7 +1893,7 @@ summary {
 <p>The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike <em>Knit</em>, <em>Preview</em> does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.</p>
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKVGhpcyBpcyBhbiBbUiBNYXJrZG93bl0oaHR0cDovL3JtYXJrZG93bi5yc3R1ZGlvLmNvbSkgTm90ZWJvb2suIFdoZW4geW91IGV4ZWN1dGUgY29kZSB3aXRoaW4gdGhlIG5vdGVib29rLCB0aGUgcmVzdWx0cyBhcHBlYXIgYmVuZWF0aCB0aGUgY29kZS4gCgpUcnkgZXhlY3V0aW5nIHRoaXMgY2h1bmsgYnkgY2xpY2tpbmcgdGhlICpSdW4qIGJ1dHRvbiB3aXRoaW4gdGhlIGNodW5rIG9yIGJ5IHBsYWNpbmcgeW91ciBjdXJzb3IgaW5zaWRlIGl0IGFuZCBwcmVzc2luZyAqQ3RybCtTaGlmdCtFbnRlciouIAoKYGBge3J9CnBsb3QoY2FycykKYGBgCgpBZGQgYSBuZXcgY2h1bmsgYnkgY2xpY2tpbmcgdGhlICpJbnNlcnQgQ2h1bmsqIGJ1dHRvbiBvbiB0aGUgdG9vbGJhciBvciBieSBwcmVzc2luZyAqQ3RybCtBbHQrSSouCgpXaGVuIHlvdSBzYXZlIHRoZSBub3RlYm9vaywgYW4gSFRNTCBmaWxlIGNvbnRhaW5pbmcgdGhlIGNvZGUgYW5kIG91dHB1dCB3aWxsIGJlIHNhdmVkIGFsb25nc2lkZSBpdCAoY2xpY2sgdGhlICpQcmV2aWV3KiBidXR0b24gb3IgcHJlc3MgKkN0cmwrU2hpZnQrSyogdG8gcHJldmlldyB0aGUgSFRNTCBmaWxlKS4KClRoZSBwcmV2aWV3IHNob3dzIHlvdSBhIHJlbmRlcmVkIEhUTUwgY29weSBvZiB0aGUgY29udGVudHMgb2YgdGhlIGVkaXRvci4gQ29uc2VxdWVudGx5LCB1bmxpa2UgKktuaXQqLCAqUHJldmlldyogZG9lcyBub3QgcnVuIGFueSBSIGNvZGUgY2h1bmtzLiBJbnN0ZWFkLCB0aGUgb3V0cHV0IG9mIHRoZSBjaHVuayB3aGVuIGl0IHdhcyBsYXN0IHJ1biBpbiB0aGUgZWRpdG9yIGlzIGRpc3BsYXllZC4K</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQpleGVyY2lzZSAyLjMKCjEuIFdoYXQgaXMgdGhlIHN1bSBvZiB0aGUgZmlyc3QgMTAwIHBvc2l0aXZlIGludGVnZXJzPyAKbj0xMDAgYW5kIHRoZW4gdXNlIFIgdG8gY29tcHV0ZSB0aGUgc3VtIG9mIGl0CiAgdXNpbmcgdGhlIGZvcm11bGEuIFdoYXQgaXMgdGhlIHN1bT8gCi0+WzFdNTA1MAoyLiBOb3cgdXNlIHRoZSBzYW1lIGZvcm11bGEgdG8gY29tcHV0ZSB0aGUgc3VtIG9mIHRoZSBpbnRlZ2VycyBmcm9tIDEgdGhyb3VnaCAxLDAwMC4KLT5bMl01MDA1MDAKMy5CYXNlZCBvbiB0aGUgcmVzdWx0LCB3aGF0IGRvIHlvdSB0aGluayB0aGUgZnVuY3Rpb25zIHNlcSBhbmQgc3VtIGRvPyAKLT5bM10gYgpzZXEgY3JlYXRlcyBsaXN0IG9mIG51bWJlcnMsIGFuZCBzdW0gYWRkcyB0aGVtIHVwLgppdCBpcyBiZWNhdXNlIHNlcSgxLG4pIGFzc2lnbmVkIGVxdWF0aW9uIGZvciB4LCBhbmQgc3VtCmluZGljYXRlZCB0aGUgdmFyaWFibGUgcmVwbGFjZW1lbnQgZm9yIG4uIAoKNC4gSW4gbWF0aCBhbmQgcHJvZ3JhbW1pbmcsIHdlIHNheSB0aGF0IHdlIGV2YWx1YXRlIGEgZnVuY3Rpb24gd2hlbiB3ZSByZXBsYWNlIHRoZSBhcmd1bWVudCB3aXRoIGEgZ2l2ZW4gbnVtYmVyLiBTbyBpZiB3ZSB0eXBlIHNxcnQoNCksIHdlIGV2YWx1YXRlIHRoZSBzcXJ0IGZ1bmN0aW9uLiBJbiBSLCB5b3UgY2FuIGV2YWx1YXRlIGEgZnVuY3Rpb24gaW5zaWRlIGFub3RoZXIgZnVuY3Rpb24uIFRoZSBldmFsdWF0aW9ucyBoYXBwZW4gZnJvbSB0aGUgaW5zaWRlIG91dC4gVXNlIG9uZSBsaW5lIG9mIGNvZGUgdG8gY29tcHV0ZSB0aGUgbG9nLCBpbiBiYXNlIDEwLCBvZiB0aGUgc3F1YXJlIHJvb3Qgb2YgMTAwLgotPjEKCjUuIFdoaWNoIG9mIHRoZSBmb2xsb3dpbmcgd2lsbCBhbHdheXMgcmV0dXJuIHRoZSBudW1lcmljIHZhbHVlIHN0b3JlZCBpbiB4PyBZb3UgY2FuIHRyeSBvdXQgZXhhbXBsZXMgYW5kIHVzZSB0aGUgaGVscCBzeXN0ZW0gaWYgeW91IHdhbnQuCi0+SSByZXBsYWNlZCAxMDAgaW5zdGVhZCBvZiB4LiBUaGUgcmVzdWx0IHNob3dlZCBvbmx5IEMgY29udGFpbgpudW1lcmljIHZhbHVlLiAKCgpleGVyY2lzZSAyLjUKCjEuV2hpY2ggb2YgdGhlIGZvbGxvd2luZyBiZXN0IGRlc2NyaWJlcyB0aGUgdmFyaWFibGVzIHJlcHJlc2VudGVkIGluIHRoaXMgZGF0YSBmcmFtZT8KCmEuVGhlIDUxIHN0YXRlcy4KYi5UaGUgbXVyZGVyIHJhdGVzIGZvciBhbGwgNTAgc3RhdGVzIGFuZCBEQy4KYy5UaGUgc3RhdGUgbmFtZSwgdGhlIGFiYnJldmlhdGlvbiBvZiB0aGUgc3RhdGUgbmFtZSwgdGhlIHN0YXRl4oCZcyByZWdpb24sIGFuZCB0aGUgc3RhdGXigJlzIHBvcHVsYXRpb24gYW5kIHRvdGFsIG51bWJlciBvZiBtdXJkZXJzIGZvciAyMDEwLgpkLnN0ciBzaG93cyBubyByZWxldmFudCBpbmZvcm1hdGlvbi4KCi0+IEl0IGlzIGMuIAoKMi4gV2hhdCBhcmUgdGhlIGNvbHVtbiBuYW1lcyB1c2VkIGJ5IHRoZSBkYXRhIGZyYW1lIGZvciB0aGVzZSBmaXZlIHZhcmlhYmxlcz8KLT4gc3RhdGUsIGFiYihhYmJyZXZpYXRpb24pLCByZWdpb24sIHBvcHVsYXRpb24sIHRvdGFsCgozLiBVc2UgdGhlIGFjY2Vzc29yICQgdG8gZXh0cmFjdCB0aGUgc3RhdGUgYWJicmV2aWF0aW9ucyBhbmQgYXNzaWduIHRoZW0gdG8gdGhlIG9iamVjdCBhLiBXaGF0IGlzIHRoZSBjbGFzcyBvZiB0aGlzIG9iamVjdD8KLT4gY2hhcmFjdGVyCgo0LiBOb3cgdXNlIHRoZSBzcXVhcmUgYnJhY2tldHMgdG8gZXh0cmFjdCB0aGUgc3RhdGUgYWJicmV2aWF0aW9ucyBhbmQgYXNzaWduIHRoZW0gdG8gdGhlIG9iamVjdCBiLiBVc2UgdGhlIGlkZW50aWNhbCBmdW5jdGlvbiB0byBkZXRlcm1pbmUgaWYgYSBhbmQgYiBhcmUgdGhlIHNhbWUuCi0+aWRlbnRpY2FsLgoKNS5XZSBzYXcgdGhhdCB0aGUgcmVnaW9uIGNvbHVtbiBzdG9yZXMgYSBmYWN0b3IuIFlvdSBjYW4gY29ycm9ib3JhdGUgdGhpcyBieSB0eXBpbmc6Y2xhc3MobXVyZGVycyRyZWdpb24pCldpdGggb25lIGxpbmUgb2YgY29kZSwgdXNlIHRoZSBmdW5jdGlvbiBsZXZlbHMgYW5kIGxlbmd0aCB0byBkZXRlcm1pbmUgdGhlIG51bWJlciBvZiByZWdpb25zIGRlZmluZWQgYnkgdGhpcyBkYXRhc2V0LgotPjUxCgo2LiBUaGUgZnVuY3Rpb24gdGFibGUgdGFrZXMgYSB2ZWN0b3IgYW5kIHJldHVybnMgdGhlIGZyZXF1ZW5jeSBvZiBlYWNoIGVsZW1lbnQuIFlvdSBjYW4gcXVpY2tseSBzZWUgaG93IG1hbnkgc3RhdGVzIGFyZSBpbiBlYWNoIHJlZ2lvbiBieSBhcHBseWluZyB0aGlzIGZ1bmN0aW9uLiBVc2UgdGhpcyBmdW5jdGlvbiBpbiBvbmUgbGluZSBvZiBjb2RlIHRvIGNyZWF0ZSBhIHRhYmxlIG9mIHN0YXRlcyBwZXIgcmVnaW9uLgotPnNob3dlZCBiZWxvdwoKVHJ5IGV4ZWN1dGluZyB0aGlzIGNodW5rIGJ5IGNsaWNraW5nIHRoZSAqUnVuKiBidXR0b24gd2l0aGluIHRoZSBjaHVuayBvciBieSBwbGFjaW5nIHlvdXIgY3Vyc29yIGluc2lkZSBpdCBhbmQgcHJlc3NpbmcgKkN0cmwrU2hpZnQrRW50ZXIqLiAKCmBgYHtyfQpuIDwtIDEwMAoobioobiArIDEpKSAvIDIKCm4gPC0gMTAwMAoobioobiArIDEpKSAvIDIKCm4gPC0gMTAwMAp4IDwtIHNlcSgxLCBuKQpzdW0oeCkKCmxvZyhzcXJ0KDEwMCksIGJhc2UgPSAxMCkKCmxvZygxMF4xMCkKbG9nMTAoMTAwXjEwKQpsb2coZXhwKDEwMCkpCmV4cChsb2coMTAsIGJhc2UgPSAyKSkKCgoKCmxpYnJhcnkoZHNsYWJzKQpkYXRhKG11cmRlcnMpCgpzdHIobXVyZGVycykKCmEgPC0gbXVyZGVycyRhYmIKY2xhc3MoYSkKCmIgPC0gbXVyZGVycyRzdGF0ZQphID09IGIKY2xhc3MobXVyZGVycyRyZWdpb24pCgoKCmxldmVscyhtdXJkZXJzJHJlZ2lvbikKbGVuZ3RoKG11cmRlcnMkcmVnaW9uKQoKbXVyZGVyc1ssIDEmM10KYGBgCgpBZGQgYSBuZXcgY2h1bmsgYnkgY2xpY2tpbmcgdGhlICpJbnNlcnQgQ2h1bmsqIGJ1dHRvbiBvbiB0aGUgdG9vbGJhciBvciBieSBwcmVzc2luZyAqQ3RybCtBbHQrSSouCgpXaGVuIHlvdSBzYXZlIHRoZSBub3RlYm9vaywgYW4gSFRNTCBmaWxlIGNvbnRhaW5pbmcgdGhlIGNvZGUgYW5kIG91dHB1dCB3aWxsIGJlIHNhdmVkIGFsb25nc2lkZSBpdCAoY2xpY2sgdGhlICpQcmV2aWV3KiBidXR0b24gb3IgcHJlc3MgKkN0cmwrU2hpZnQrSyogdG8gcHJldmlldyB0aGUgSFRNTCBmaWxlKS4KClRoZSBwcmV2aWV3IHNob3dzIHlvdSBhIHJlbmRlcmVkIEhUTUwgY29weSBvZiB0aGUgY29udGVudHMgb2YgdGhlIGVkaXRvci4gQ29uc2VxdWVudGx5LCB1bmxpa2UgKktuaXQqLCAqUHJldmlldyogZG9lcyBub3QgcnVuIGFueSBSIGNvZGUgY2h1bmtzLiBJbnN0ZWFkLCB0aGUgb3V0cHV0IG9mIHRoZSBjaHVuayB3aGVuIGl0IHdhcyBsYXN0IHJ1biBpbiB0aGUgZWRpdG9yIGlzIGRpc3BsYXllZC4K</div>
 
 
 
